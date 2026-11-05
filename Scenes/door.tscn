@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://deckl56mngwm2"]
+
+[ext_resource type="Script" uid="uid://c7gl6x0ju12oc" path="res://Scripts/door.gd" id="1_p0e35"]
+[ext_resource type="Texture2D" uid="uid://buqk2htlcoqng" path="res://Sprites/door.png" id="2_p0e35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(14, 70)
+
+[node name="Door" type="RigidBody2D" unique_id=1166331062 groups=["Door"]]
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+script = ExtResource("1_p0e35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281328741]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178306762]
+position = Vector2(-0.50000024, 4.7683716e-06)
+scale = Vector2(0.59999996, 1.0933334)
+texture = ExtResource("2_p0e35")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1405619689]
+z_index = -1
+offset_top = -689.0
+offset_right = 687.0
+offset_bottom = 389.0
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dtjkbld4l1xt8"]
+
+[ext_resource type="Script" uid="uid://vrek3x44hxpx" path="res://Scripts/loss.gd" id="1_o6h81"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2098756668]
+script = ExtResource("1_o6h81")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=365597622]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.24231142, 2.1959656e-07, 5.4147094e-08, 1)
+
+[node name="Label" type="Label" parent="." unique_id=58937409]
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 1152.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rooms" type="Label" parent="." unique_id=1940389948]
+offset_left = 675.0
+offset_top = 241.0
+offset_right = 1143.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 50
+text = "Rooms: 1000"
+vertical_alignment = 1
+
+[node name="Enemies" type="Label" parent="." unique_id=1023943541]
+offset_left = 675.0
+offset_top = 305.0
+offset_right = 1143.0
+offset_bottom = 377.0
+theme_override_font_sizes/font_size = 50
+text = "Enemies: 1000"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="." unique_id=1047435802]
+offset_left = 678.0
+offset_top = 370.0
+offset_right = 1146.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 50
+text = "Time: 2:10:07:231"
+vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="." unique_id=2063371044]
+offset_left = 123.0
+offset_top = 277.0
+offset_right = 442.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

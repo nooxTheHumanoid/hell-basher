@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://byhotuevk7wob"]
+
+[ext_resource type="Script" uid="uid://dxp6eaqke0oym" path="res://Scripts/menu.gd" id="1_cx167"]
+[ext_resource type="Script" uid="uid://8pfq1amli6cc" path="res://Scripts/play_button.gd" id="1_ylpcl"]
+[ext_resource type="AudioStream" uid="uid://cekrrh4gtdf0l" path="res://Audio/Menu hell.mp3" id="3_ylpcl"]
+[ext_resource type="Texture2D" uid="uid://b4ar3prbtqgbh" path="res://Sprites/HellBasher.png" id="4_cx167"]
+[ext_resource type="Texture2D" uid="uid://drhowwuhn4tb0" path="res://Sprites/Pain.png" id="5_n4eug"]
+[ext_resource type="Texture2D" uid="uid://cr2i14v01b8m0" path="res://Sprites/timer.png" id="6_dlksc"]
+[ext_resource type="Texture2D" uid="uid://drp8ecaqbfblj" path="res://Sprites/Speed.png" id="6_hcwhg"]
+
+[node name="Menu" type="Node2D" unique_id=1513775786]
+script = ExtResource("1_cx167")
+
+[node name="PlayButton" type="Button" parent="." unique_id=539198234]
+offset_left = -175.0
+offset_top = 26.0
+offset_right = 177.0
+offset_bottom = 125.0
+text = "Play"
+script = ExtResource("1_ylpcl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=262153737]
+
+[node name="Label" type="Label" parent="." unique_id=114389]
+offset_left = -576.0
+offset_top = -247.0
+offset_right = 575.0
+offset_bottom = -76.0
+theme_override_colors/font_color = Color(0.61960787, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_font_sizes/font_size = 125
+text = "Hell Basher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="True" type="Label" parent="." unique_id=1730979900]
+offset_left = -586.0
+offset_top = -234.0
+offset_right = -235.0
+offset_bottom = -63.0
+rotation = -0.44854963
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_font_sizes/font_size = 100
+text = "TRUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1839874540]
+stream = ExtResource("3_ylpcl")
+autoplay = true
+parameters/looping = true
+
+[node name="Simple camera" type="CheckBox" parent="." unique_id=2020852456]
+offset_left = 332.0
+offset_top = 244.0
+offset_right = 574.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 30
+text = "Simple camera"
+alignment = 1
+
+[node name="SpeedAffectKB" type="CheckBox" parent="." unique_id=744425105]
+offset_left = -140.0
+offset_top = 244.0
+offset_right = 266.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 30
+text = "Speed affected knockback"
+alignment = 1
+
+[node name="KBIframe" type="CheckBox" parent="." unique_id=65489249]
+offset_left = -572.0
+offset_top = 244.0
+offset_right = -180.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 30
+text = "Knockback during Iframe"
+alignment = 1
+
+[node name="Bhop" type="CheckBox" parent="." unique_id=2137235898]
+offset_left = 332.0
+offset_top = 172.0
+offset_right = 574.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 30
+text = "Auto Bhop"
+alignment = 1
+
+[node name="OneTap" type="CheckBox" parent="." unique_id=688793876]
+offset_left = 332.0
+offset_top = 100.0
+offset_right = 574.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 30
+text = "One Shot"
+alignment = 1
+
+[node name="IFrames" type="HSlider" parent="." unique_id=1324803343]
+offset_left = 336.0
+offset_top = 81.0
+offset_right = 567.0
+offset_bottom = 97.0
+step = 0.5
+value = 50.0
+
+[node name="FrameCount" type="Label" parent="." unique_id=2041328317]
+offset_left = 335.0
+offset_top = 18.0
+offset_right = 566.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 30
+text = "Iframes: 100.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="room" type="HSlider" parent="." unique_id=220724694]
+offset_left = -560.0
+offset_top = 233.0
+offset_right = -329.0
+offset_bottom = 249.0
+min_value = 5.0
+value = 25.0
+
+[node name="roomtimer" type="Label" parent="." unique_id=556081956]
+offset_left = -561.0
+offset_top = 170.0
+offset_right = -330.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 30
+text = "RoomTimer: 25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="particle" type="HSlider" parent="." unique_id=2023692122]
+offset_left = -251.0
+offset_top = 233.0
+offset_right = -20.0
+offset_bottom = 249.0
+max_value = 400.0
+step = 2.0
+value = 200.0
+
+[node name="particles" type="Label" parent="." unique_id=196619991]
+offset_left = -252.0
+offset_top = 170.0
+offset_right = -21.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 30
+text = "Particles: 200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="speed" type="HSlider" parent="." unique_id=780485105]
+offset_left = 29.0
+offset_top = 233.0
+offset_right = 260.0
+offset_bottom = 249.0
+min_value = 500.0
+max_value = 5001.0
+value = 5001.0
+
+[node name="speed2" type="Label" parent="." unique_id=42591965]
+offset_left = -12.0
+offset_top = 170.0
+offset_right = 304.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 30
+text = "Max speed: Unlimited"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fireCD" type="HSlider" parent="." unique_id=294664322]
+offset_left = -560.0
+offset_top = 129.0
+offset_right = -329.0
+offset_bottom = 145.0
+max_value = 10.0
+step = 0.1
+value = 3.0
+
+[node name="fireCDLabel" type="Label" parent="." unique_id=1038598103]
+offset_left = -561.0
+offset_top = 66.0
+offset_right = -330.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 30
+text = "Fire cooldown: 3.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1976795051]
+offset_left = -564.0
+offset_top = -49.0
+offset_right = -327.0
+offset_bottom = -11.0
+selected = 4
+item_count = 5
+popup/item_0/text = "Default"
+popup/item_0/id = 0
+popup/item_1/text = "Relaxed"
+popup/item_1/id = 1
+popup/item_2/text = "True Hell Basher"
+popup/item_2/id = 2
+popup/item_3/text = "Actual Torment"
+popup/item_3/id = 3
+popup/item_4/text = "Presets"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+popup/item_4/separator = true
+
+[node name="NoHit" type="TextureRect" parent="." unique_id=1780216588]
+offset_left = 391.0
+offset_top = -306.0
+offset_right = 495.0
+offset_bottom = -207.0
+texture = ExtResource("4_cx167")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Pain" type="TextureRect" parent="." unique_id=1680806497]
+offset_left = 442.0
+offset_top = -183.0
+offset_right = 546.0
+offset_bottom = -84.0
+texture = ExtResource("5_n4eug")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Speed" type="TextureRect" parent="." unique_id=1955787804]
+offset_left = 337.0
+offset_top = -97.0
+offset_right = 441.0
+offset_bottom = 2.0
+texture = ExtResource("6_hcwhg")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="InRush" type="TextureRect" parent="." unique_id=690195714]
+offset_left = 261.0
+offset_top = -317.0
+offset_right = 374.0
+offset_bottom = -204.0
+texture = ExtResource("6_dlksc")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
+[connection signal="toggled" from="Simple camera" to="." method="_on_simple_camera_toggled"]
+[connection signal="toggled" from="SpeedAffectKB" to="." method="_on_speed_affect_kb_toggled"]
+[connection signal="toggled" from="KBIframe" to="." method="_on_kb_iframe_toggled"]
+[connection signal="toggled" from="Bhop" to="." method="_on_bhop_toggled"]
+[connection signal="toggled" from="OneTap" to="." method="_on_one_tap_toggled"]
+[connection signal="value_changed" from="IFrames" to="." method="_on_i_frames_value_changed"]
+[connection signal="value_changed" from="room" to="." method="_on_room_value_changed"]
+[connection signal="value_changed" from="particle" to="." method="_on_particle_value_changed"]
+[connection signal="value_changed" from="speed" to="." method="_on_speed_value_changed"]
+[connection signal="value_changed" from="fireCD" to="." method="_on_fire_cd_value_changed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

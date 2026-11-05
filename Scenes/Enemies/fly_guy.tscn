@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://g5ajipo4w0oh"]
+
+[ext_resource type="Script" uid="uid://dw5b2kvwxmplw" path="res://Scripts/fly_guy.gd" id="1_mqwbm"]
+[ext_resource type="Texture2D" uid="uid://dlbmmah38m86p" path="res://Sprites/FlyGuy.png" id="2_pqy0o"]
+[ext_resource type="Script" uid="uid://bxv44r2pe4w8u" path="res://Scripts/Spikes.gd" id="3_pqy0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(36, 36)
+
+[node name="FlyGuy" type="RigidBody2D" unique_id=1045732299 groups=["Door"]]
+collision_layer = 15
+collision_mask = 15
+gravity_scale = 0.0
+script = ExtResource("1_mqwbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183598658]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=736222089]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_pqy0o")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=892421406]
+script = ExtResource("3_pqy0o")
+strenght = 300.0
+stun = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=321998459]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

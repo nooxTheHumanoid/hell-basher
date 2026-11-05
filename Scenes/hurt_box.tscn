@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://btyj23athxgiu"]
+
+[ext_resource type="Script" uid="uid://bxv44r2pe4w8u" path="res://Scripts/Spikes.gd" id="1_2ktet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(816, 110)
+
+[node name="Hurt box" type="Area2D" unique_id=791058187]
+script = ExtResource("1_2ktet")
+strenght = 600.0
+bypass = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000575682]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

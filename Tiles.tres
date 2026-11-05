@@ -1,0 +1,41 @@
+[gd_resource type="TileSet" format=3 uid="uid://brbk42clh8nv8"]
+
+[ext_resource type="Texture2D" uid="uid://d03cs51hjhdnm" path="res://Sprites/SandishStone.png" id="1_k3048"]
+[ext_resource type="Texture2D" uid="uid://bd5dktvc1ugaj" path="res://Sprites/SandishStoneSlope1.png" id="2_0td3c"]
+[ext_resource type="Texture2D" uid="uid://ce0tlsq1ttlte" path="res://Sprites/SandishStoneSlope2.png" id="3_iovas"]
+[ext_resource type="Texture2D" uid="uid://43d6rpijbtrp" path="res://Sprites/SandishStoneSlope3.png" id="4_7jlij"]
+[ext_resource type="Texture2D" uid="uid://c4amtlceuy2f6" path="res://Sprites/SandishStoneSlope4.png" id="5_ijlwo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
+resource_name = "Sandstone"
+texture = ExtResource("1_k3048")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3d726"]
+texture = ExtResource("2_0td3c")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nx8ds"]
+texture = ExtResource("3_iovas")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hapq3"]
+texture = ExtResource("4_7jlij")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6x0d5"]
+texture = ExtResource("5_ijlwo")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k5f4k")
+sources/1 = SubResource("TileSetAtlasSource_3d726")
+sources/2 = SubResource("TileSetAtlasSource_nx8ds")
+sources/3 = SubResource("TileSetAtlasSource_hapq3")
+sources/4 = SubResource("TileSetAtlasSource_6x0d5")

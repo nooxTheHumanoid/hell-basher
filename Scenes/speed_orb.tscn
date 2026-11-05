@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvofs2mfyik3p"]
+
+[ext_resource type="Script" uid="uid://byhrabmlaru46" path="res://Scripts/SpeedOrb.gd" id="1_rmpm3"]
+[ext_resource type="Texture2D" uid="uid://cghttaharbs1p" path="res://Sprites/SpeedOrb.png" id="2_6jau0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 9.055386
+
+[node name="SpeedOrb" type="Area2D" unique_id=327841268]
+script = ExtResource("1_rmpm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264097237]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=683589794]
+texture = ExtResource("2_6jau0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

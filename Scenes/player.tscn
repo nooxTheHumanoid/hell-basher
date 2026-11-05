@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://d0nb5666jy16t"]
+
+[ext_resource type="Script" uid="uid://bg80qodegkhs8" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bebbokrv3ms0f" path="res://Sprites/HellBasher/idle.png" id="2_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://dnsii2bjukxxg" path="res://Scenes/weapon.tscn" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cdjes2x3htgwt" path="res://Sprites/HellBasher/jump.png" id="3_tx1dd"]
+[ext_resource type="Script" uid="uid://cv8jsbeessrfn" path="res://Scripts/timer.gd" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://dnpsl1mm7t3h0" path="res://Sprites/HellBasher/kick.png" id="4_gymyn"]
+[ext_resource type="Texture2D" uid="uid://bupfxufy7wcid" path="res://Sprites/HellBasher/slide.png" id="5_gymyn"]
+[ext_resource type="Texture2D" uid="uid://ddal8l8eechr6" path="res://Sprites/HellBasher/walk3.png" id="5_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://c7w58arntskck" path="res://Sprites/HellBasher/walk4.png" id="6_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://b4ar3prbtqgbh" path="res://Sprites/HellBasher.png" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://cj5v06td6mjit" path="res://Sprites/HellBasher/walk5.png" id="7_7dp3o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7138"]
+height = 50.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tx1dd")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tx1dd")
+}],
+"loop": 1,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gymyn")
+}],
+"loop": 1,
+"name": &"Kick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gymyn")
+}],
+"loop": 1,
+"name": &"Slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pu2lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ukyrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7dp3o")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0, 0.32156864, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(57, 50)
+
+[sub_resource type="Gradient" id="Gradient_gymyn"]
+offsets = PackedFloat32Array(0.0022935779, 0.51605505, 0.99311924)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.50980395, 0, 1, 0.48774493, 0.23556346, 0, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=1169400624 groups=["Player"]]
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=964723299]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_e7138")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=395115914]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 0.9791667)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1464424900]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="Time" type="Label" parent="Camera2D" unique_id=1166492200]
+z_index = 7
+offset_left = -379.0
+offset_top = 179.0
+offset_right = -242.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 25
+text = "Time: 21:00"
+script = ExtResource("3_vgqql")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=1473069222]
+z_index = 7
+offset_left = -374.0
+offset_top = -203.0
+offset_right = -101.0
+offset_bottom = -155.0
+
+[node name="Heath" type="TextureRect" parent="Camera2D/HBoxContainer" unique_id=226400098]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="Heart" type="Sprite2D" parent="Camera2D/HBoxContainer/Heath" unique_id=192366455]
+position = Vector2(35.999996, 36.999996)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_x3wgy")
+
+[node name="Heath2" type="TextureRect" parent="Camera2D/HBoxContainer" unique_id=1076939999]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="Heart" type="Sprite2D" parent="Camera2D/HBoxContainer/Heath2" unique_id=879214250]
+position = Vector2(35.999996, 36.999996)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_x3wgy")
+
+[node name="Heath3" type="TextureRect" parent="Camera2D/HBoxContainer" unique_id=1405480904]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="Heart" type="Sprite2D" parent="Camera2D/HBoxContainer/Heath3" unique_id=1472896397]
+position = Vector2(35.999996, 36.999996)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_x3wgy")
+
+[node name="FireCDBar" type="ProgressBar" parent="Camera2D" unique_id=842685477]
+z_index = 7
+offset_left = 310.0
+offset_top = -116.0
+offset_right = 354.0
+offset_bottom = 116.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yf5fn")
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+
+[node name="Timer" type="Timer" parent="Camera2D/FireCDBar" unique_id=64771751]
+
+[node name="Label" type="Label" parent="." unique_id=2105312565]
+visible = false
+z_index = 7
+offset_left = -187.0
+offset_top = -101.0
+offset_right = -78.0
+offset_bottom = -78.0
+text = "Speed: 150"
+
+[node name="Weapon" parent="." unique_id=642054240 instance=ExtResource("3_6t5aa")]
+position = Vector2(1, 6)
+
+[node name="KickHitbox" type="Area2D" parent="." unique_id=1458728278]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickHitbox" unique_id=956915804]
+position = Vector2(28.5, 2)
+shape = SubResource("RectangleShape2D_g4v7s")
+disabled = true
+
+[node name="Slide" type="CPUParticles2D" parent="." unique_id=1334790150]
+visible = false
+position = Vector2(-6, 23)
+amount = 100
+lifetime = 0.25
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.5
+scale_amount_max = 5.0
+color = Color(0.6862745, 0, 0, 1)
+
+[node name="Slide2" type="CPUParticles2D" parent="." unique_id=1344411422]
+visible = false
+position = Vector2(13, 23)
+amount = 100
+lifetime = 0.25
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.5
+scale_amount_max = 5.0
+color = Color(0.6862745, 0, 0, 1)
+
+[node name="Exp" type="CPUParticles2D" parent="." unique_id=1588903689]
+position = Vector2(-3, 20)
+amount = 100
+lifetime = 0.25
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 300)
+scale_amount_min = 0.5
+scale_amount_max = 7.0
+color_ramp = SubResource("Gradient_gymyn")
+
+[node name="Exp2" type="CPUParticles2D" parent="." unique_id=1263898716]
+position = Vector2(5, 23)
+amount = 100
+lifetime = 0.25
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 300)
+scale_amount_min = 0.5
+scale_amount_max = 7.0
+color_ramp = SubResource("Gradient_gymyn")
+
+[connection signal="body_entered" from="KickHitbox" to="." method="_on_kick_hitbox_body_entered"]

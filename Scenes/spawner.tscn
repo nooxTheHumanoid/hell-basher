@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drm5go1leogb"]
+
+[ext_resource type="Script" uid="uid://cuorofvc0sfcf" path="res://Scripts/Spawner.gd" id="1_mdv8j"]
+[ext_resource type="PackedScene" uid="uid://g5ajipo4w0oh" path="res://Scenes/Enemies/fly_guy.tscn" id="2_xhbpr"]
+
+[node name="Spawner" type="Node2D" unique_id=672841295]
+script = ExtResource("1_mdv8j")
+enemy_scene = ExtResource("2_xhbpr")
